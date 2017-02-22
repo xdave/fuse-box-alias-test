@@ -10,7 +10,7 @@ const html = 'index.html';
 const entry = '>index.tsx';
 const prod = process.env.NODE_ENV === 'production';
 
-const config = {
+const fuse = fsbx.FuseBox.init({
     alias: {
         'react': 'preact-compat',
         'react-dom': 'preact-compat'
@@ -35,9 +35,7 @@ const config = {
         fsbx.EnvPlugin({ NODE_ENV: process.env.NODE_ENV }),
         prod ? fsbx.UglifyJSPlugin() : {},
     ]
-};
-
-const fuse = new fsbx.FuseBox(config);
+});
 
 if (process.argv.indexOf('--dev') > -1) {
     fuse.devServer(entry);
