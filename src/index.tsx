@@ -60,15 +60,11 @@ const Main = connect(mapStateToProps, mapDispatchToProps)(MainView);
 
 const win: any = window;
 win.__store = win.__store || createStore(someReducer);
-const element = document.querySelector('#app');
+const element = document.body;
 
-if (element !== null) {
-    element.innerHTML = '';
-
-    ReactDOM.render((
-        <Provider store={win.__store}>
-            <Main />
-        </Provider>
-    ), element);
-}
+ReactDOM.render((
+    <Provider store={win.__store}>
+        <Main />
+    </Provider>
+), element);
 
