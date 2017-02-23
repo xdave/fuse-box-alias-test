@@ -1,5 +1,5 @@
 # fuse-box-alias-test
-Test repo for fuse-box issue #269
+Test repo for fuse-box issue #290
 
 1. `git clone https://github.com/xdave/fuse-box-alias-test.git`
 2. `cd fuse-box-alias-test`
