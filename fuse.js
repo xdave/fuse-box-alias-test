@@ -28,6 +28,7 @@ const fuse = fsbx.FuseBox.init({
                 try { fs.mkdirSync(publicDir); } catch (err) { }
             },
             bundleEnd(context) {
+                context.log.echo('Copying ' + html);
                 fs.createReadStream(path.join(homeDir, html))
                     .pipe(fs.createWriteStream(path.join(publicDir, html)));
             }

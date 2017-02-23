@@ -1,4 +1,10 @@
-import { ActionsMap, ChangeMessage, IncrementCounter } from './types';
+import { ActionsMap, ChangeMessage, IncrementCounter, ResetState } from './types';
+
+export const resetState = (): ResetState => {
+    return {
+        type: 'RESET_STATE'
+    };
+};
 
 export const changeMessage = (message: string): ChangeMessage => {
     return {
@@ -15,6 +21,7 @@ export const incrementCounter = (by: number): IncrementCounter => {
 };
 
 export default {
+    resetState,
     changeMessage,
     incrementCounter
 } as ActionsMap;

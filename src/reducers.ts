@@ -7,6 +7,8 @@ export const initial: State = {
 
 export const someReducer = (state: State = initial, action: AppActions) => {
     switch (action.type) {
+        case 'RESET_STATE':
+            return initial;
         case 'CHANGE_MESSAGE':
             return {
                 ...state,
