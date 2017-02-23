@@ -13,7 +13,8 @@ const prod = process.env.NODE_ENV === 'production';
 const fuse = fsbx.FuseBox.init({
     alias: {
         'react': 'preact-compat',
-        'react-dom': 'preact-compat'
+        'react-dom': 'preact-compat',
+        // 'react-redux': 'preact-redux'
     },
     homeDir,
     outFile,
