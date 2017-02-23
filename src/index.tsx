@@ -67,4 +67,3 @@ ReactDOM.render((
         <Main />
     </Provider>
 ), element);
-
