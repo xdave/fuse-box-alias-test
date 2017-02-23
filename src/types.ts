@@ -1,8 +1,12 @@
 import { Action, ActionCreator, ActionCreatorsMapObject } from 'redux';
 
-export interface State {
+export interface Some {
     message: string;
     count: number;
+}
+
+export interface State {
+    some: Some;
 }
 
 export interface ResetState extends Action {

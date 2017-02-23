@@ -1,10 +1,12 @@
-import { bindActionCreators, Dispatch } from 'redux';
 import * as React from 'react';
-import { ActionsMap, State } from './types';
-import appActions from './actions';
+import { Link } from 'react-router';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
-export const MainView = ({ message, count, ...actions }: State & ActionsMap) => (
+import { ActionsMap, State, Some } from './types';
+import appActions from './actions';
+
+export const MainView = ({ message, count, ...actions }: Some & ActionsMap) => (
     <div>
         <h1>Message: {message} {count}</h1>
         <button onClick={e => actions.resetState()}>
@@ -16,10 +18,12 @@ export const MainView = ({ message, count, ...actions }: State & ActionsMap) => 
         <button onClick={e => actions.incrementCounter(1)}>
             Increase Counter
         </button>
+        <hr />
+        <Link to="/other">Go to another page</Link>
     </div>
 );
 
-export const mapStateToProps = (state: State) => state;
+export const mapStateToProps = (state: State) => state.some;
 export const mapDispatchToProps = (dispatch: Dispatch<State>) => {
     return bindActionCreators(appActions, dispatch);
 };
